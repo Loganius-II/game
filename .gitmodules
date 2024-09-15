@@ -1,0 +1,3 @@
+[submodule "PlayStation"]
+	path = PlayStation
+	url = https://github.com/lrusso/PlayStation.git
