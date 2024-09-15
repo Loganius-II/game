@@ -4,3 +4,6 @@
 [submodule "VirtualXP"]
 	path = VirtualXP
 	url = https://github.com/lrusso/VirtualXP.git
+[submodule "Play-"]
+	path = Play-
+	url = https://github.com/jpd002/Play-.git
