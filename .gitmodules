@@ -1,3 +1,6 @@
 [submodule "PlayStation"]
 	path = PlayStation
 	url = https://github.com/lrusso/PlayStation.git
+[submodule "VirtualXP"]
+	path = VirtualXP
+	url = https://github.com/lrusso/VirtualXP.git
