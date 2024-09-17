@@ -1,5 +1,5 @@
 html {
-  background-color: #202124;
+  background-color: #000000;
   color: #ffffff;
   font-family: Inter sans-serif;
   }
@@ -16,17 +16,74 @@ html {
     text-align: center;
   }
   a:link {
-    color: #8ab4f8;
+    color: #ff0000;
     background-color: transparent;
     text-decoration: none;
+    transition-duration: 500ms;
   }
   a:visited {
-    color: #c58af9;
+    color: #ff0000;
     background-color: transparent;
     text-decoration: none;
   }
   a:hover {
-    color: #c58af9;
+    color: #ff0000;
     background-color: transparent;
-    text-decoration: underline;
+    text-decoration: none;
+    font-size: larger;
   }
+
+div.item {
+  width: 20vw;
+  height: 85%;
+  background-color: #070707;
+  position: fixed;
+  overflow: scroll;
+  transition-duration: 500ms;
+}
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  padding: 2px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+.switch input:checked + .slider {
+  background-color: #000000;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(26px);
+}

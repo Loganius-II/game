@@ -13,12 +13,24 @@
 
       <body>
          <div class="heading">
-          <h1>"Your mom is the bomb" -Logan</h1>
+          <h1>Unblocked Games</h1>
+          <h4>Website by: Logan McDermott</h4>
           <p>If you want more games ask me in person or js email me ig (1loganmcd@gmail.com)</p>
           <a href="https://github.com/loganius-ii/game">Link to my github if  your interested</a>
-         </div>
+          <div>
+            <h4>Theme:</h4>
+            <button id="rb">Red</button>
+            <button id="gb">Green</button>
+            <br><br>
+            <label class="switch", id="slider">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+          </div>
+        
+        </div>
         <br><br><br><br>
-        <div>
+        <div class="item", id="item">
           <a href="1">1</a>
           <br><br>
           <a href="1v1.lol">1v1.LOL</a>
@@ -109,6 +121,8 @@
           <br><br>
           <a href="minecraft1.5.2">Minecraft 1.5.2</a>
           <br><br>
+          <a href="minecraft1.8/EaglercraftX_1.8_u32_Offline_Signed.html">Minecraft 1.8 (NEW!)</a>
+          <br><br>
           <a href="motox3m2">Moto X3M 2</a>
           <br><br>
           <a href="ovo">OvO</a>
@@ -187,7 +201,7 @@
           <br><br>
           <a href="PlayStation/PlayStation.htm">Playstation Emulator (NEW!)</a>
           <br><br>
-          <a href="main.html">PS 2 Emulator (WIP)</a>
+          <a href="PS2 Emulator/">PS 2 Emulator (WIP)</a>
           <br><br>
           <a href="VirtualXP/VirtualXP.htm">Windows XP Emulator (NEW!)</a>
         </div>
@@ -201,4 +215,44 @@
             </div>
         </footer>
     </body>
+
+
+
+    <script>
+      const rb = document.getElementById("rb")
+      const gb = document.getElementById("gb")
+      const slider = document.getElementById('slider')
+      
+      if(localStorage.getItem('color1')){
+        document.querySelectorAll('a').forEach(link => {
+          link.style.color = localStorage.getItem('color1');
+      })}
+
+      if(localStorage.getItem('color2')){
+        document.getElementById("item").style.color = localStorage.getItem("color2")
+      }
+
+      rb.addEventListener("click", ()=>{
+        console.log("Switched")
+        localStorage.setItem('color1', 'red')
+        document.querySelectorAll('a').forEach(link => {
+    link.style.color = 'red'; // Replace 'red' with your desired color
+});
+      })
+      gb.addEventListener("click", ()=>{
+        localStorage.setItem('color1','green')
+        document.querySelectorAll('a').forEach(link => {
+          link.style.color = 'green';
+        })
+      })
+      
+      slider.addEventListener("change", () => {
+  const prevColor = localStorage.getItem("color2");
+  const newColor = prevColor === "white" ? "black" : "white";
+  localStorage.setItem("color2", newColor);
+  document.getElementById("item").style.backgroundColor = newColor;
+});
+
+    </script>
 </html>
+
