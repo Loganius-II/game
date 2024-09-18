@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en", id="html">
     <head>
     <meta charset="UTF-8">
     <meta name="description" content="The Best website for unblocked games!">
@@ -12,7 +12,7 @@
     </head>
 
       <body>
-         <div class="heading">
+         <div class="heading" id="heading", style="transition-duration: 500ms;">
           <h1>Unblocked Games</h1>
           <h4>Website by: Logan McDermott</h4>
           <p>If you want more games ask me in person or js email me ig (1loganmcd@gmail.com)</p>
@@ -229,7 +229,10 @@
       })}
 
       if(localStorage.getItem('color2')){
-        document.getElementById("item").style.color = localStorage.getItem("color2")
+        var color = localStorage.getItem("color2")
+        document.getElementById("item").style.backgroundColor = color;
+        document.getElementById("heading").style.backgroundColor = color;
+        document.getElementById("html").style.backgroundColor = color;
       }
 
       rb.addEventListener("click", ()=>{
@@ -251,6 +254,8 @@
   const newColor = prevColor === "white" ? "black" : "white";
   localStorage.setItem("color2", newColor);
   document.getElementById("item").style.backgroundColor = newColor;
+  document.getElementById("heading").style.backgroundColor = newColor;
+  document.getElementById("html").style.backgroundColor = newColor;
 });
 
     </script>
