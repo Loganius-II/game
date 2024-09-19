@@ -124,6 +124,7 @@ div.item {
   top: 23%;
   left: auto;
   transition-duration: 400ms;
+  z-index: 20;
 }
 
 .exit:hover {
