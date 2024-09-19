@@ -45,6 +45,7 @@ div.item {
   position: fixed;
   overflow: scroll;
   transition-duration: 500ms;
+  transform: translateX(-100%);
 }
 
 
@@ -95,19 +96,26 @@ div.item {
 
 .contact {
   left: 40%;
-  top: 10%;
+  top: -100%;
   position: absolute;
   width: 40%;
-  height: 190%;
+  height: 200%;
   background-color: rgb(0, 0, 0);
   align-items: center;
   align-content: center;
+  transition-duration: 500ms;
+  z-index: 1;
+  align-items: center;
+  align-content: center;
+  margin-top: 100px;
   
 }
 .exit {
+  position: absolute;
   height: 10px;
   width: 90px;
-  margin-left: 40%;
+  top: 10%;
+  left: auto;
   transition-duration: 400ms;
 }
 
@@ -118,5 +126,6 @@ div.item {
 }
 
  .contact:target{
-  opacity: 0;
+  display: none;
 }
+
