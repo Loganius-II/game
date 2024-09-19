@@ -121,7 +121,7 @@ div.item {
   position: absolute;
   height: 10px;
   width: 90px;
-  top: -1%;
+  top: 23%;
   left: auto;
   transition-duration: 400ms;
 }
