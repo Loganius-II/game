@@ -3,6 +3,7 @@
 }
 
 html {
+  
   background-image: (45deg, red, rgb(0, 0, 0));
   color: #ffffff;
   font-family: Inter sans-serif;
@@ -10,10 +11,10 @@ html {
   }
   .heading {
     text-align: center;
-    position: fixed;
+    position: absolute;
     width: 100%;
     padding: 10%;
-    overflow-y: scroll;
+    top: -50px;
               }
   .footer {
     position: fixed;
