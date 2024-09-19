@@ -23,9 +23,19 @@
             <button id="rb">Red</button>
             <button id="gb">Green</button>
             <br><br>
-            
+            <hr>
+            <h1>Recently Added:
+            </h1>
+            <br>
+            <p>Minecraft 1.8.8 (Multiplayer)</p>
+            <p>Wordle Unlimited</p>
+            <p>More Coming Soon!</p>
+            <hr>
+            <h3>Want to contact me?</h1>
+              <p>Game requests, feedback, overall site improvements and feature implementation. Your feedback is important!</p>
+              <a href="index.html">Click here</a>
             <div class="contact" id="contact">
-              <br class="margin">
+              <br>
               <h1>Contact/Feedback</h1>
               <h4>For questions, requests or general thoughts</h4>
               <hr>
@@ -131,6 +141,8 @@
           <br><br>
           <a href="minecraft1.8/EaglercraftX_1.8_u32_Offline_Signed.html">Minecraft 1.8 (NEW!)</a>
           <br><br>
+          <a href="minecraft1.8.8/eaglercraft.1.8.8.html">Minecraft 1.8.8 (Multiplayer Only)</a>
+          <br><br>
           <a href="motox3m2">Moto X3M 2</a>
           <br><br>
           <a href="ovo">OvO</a>
@@ -201,6 +213,8 @@
           <br><br>
           <a href="webretro">Webretro (retro console emulator)</a>
           <br><br>
+          <a href="wordle_ultd/">Wordle Unlimited (NEW!)</a>
+          <br><br>
           <a href="worldshardestgame">World's Hardest Game</a>
           <br><br>
           <a href="worldshardestgame2">World's Hardest Game 2</a>
@@ -231,9 +245,8 @@
       const gb = document.getElementById("gb")
       const slider = document.getElementById('slider')
       const item = document.getElementById('item')
-      const model = document.getElementById("contact")
 
-      model.style.top = "50%"
+
 
       item.style.transitionDuration = "1300ms"
       item.style.transform = "translateX(0)"
@@ -241,7 +254,15 @@
       if(localStorage.getItem('color1')){
         document.querySelectorAll('a').forEach(link => {
           link.style.color = localStorage.getItem('color1');
-      })}
+      }
+    )
+        if(localStorage.getItem('color1') == "red"){
+          document.getElementById("html").style.backgroundImage = "linear-gradient(45deg, red, rgb(0, 0, 0))";
+        }
+        else if(localStorage.getItem('color1') == 'green'){
+          document.getElementById("html").style.backgroundImage = "linear-gradient(45deg, green, rgb(0, 0, 0))";
+        }
+    }
 
       if(localStorage.getItem('color2')){
         var color = localStorage.getItem("color2")
@@ -254,7 +275,8 @@
         console.log("Switched")
         localStorage.setItem('color1', 'red')
         document.querySelectorAll('a').forEach(link => {
-    link.style.color = 'red'; // Replace 'red' with your desired color
+    link.style.color = 'red';
+        document.getElementById("html").style.backgroundImage = "linear-gradient(45deg, red, rgb(0, 0, 0))";
 });
       })
       gb.addEventListener("click", ()=>{
@@ -262,6 +284,7 @@
         document.querySelectorAll('a').forEach(link => {
           link.style.color = 'green';
         })
+        document.getElementById("html").style.backgroundImage = "linear-gradient(45deg, green, rgb(0, 0, 0))";
       })
       
       slider.addEventListener("change", () => {
