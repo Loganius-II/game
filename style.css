@@ -15,6 +15,7 @@ html {
     width: 100%;
     padding: 10%;
     top: -50px;
+
               }
   .footer {
     position: fixed;
@@ -43,11 +44,12 @@ html {
 
 div.item {
   width: 20vw;
-  height: 85%;
-  background-color: #070707;
+  height: 95%;
+  background-color: #000000;
   position: fixed;
   overflow: scroll;
   transition-duration: 500ms;
+
   transform: translateX(-100%);
 }
 
