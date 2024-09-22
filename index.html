@@ -59,6 +59,10 @@
         </div>
         <br><br><br><br>
         <div class="item", id="item" style="height: 100%; bottom: 1%;">
+          <input type="text" id="searchBox" placeholder="Search games..." onkeyup="searchGames()">
+          <div id="searchResults"></div>
+          <br><br>
+          <hr>
           <a href="1">1</a>
           <br><br>
           <a href="roblox/">Roblox</a>
@@ -307,7 +311,38 @@
       })
       
       
+      function searchGames() {
+            const input = document.getElementById('searchBox').value.toLowerCase();
+            const links = document.querySelectorAll('#item a');
+            const resultsDiv = document.getElementById('searchResults');
+            const color1 = localStorage.getItem('color1') || 'red'; // Default to black if color1 is not set
+            const addedLinks = new Set(); // Track added links to avoid duplicates
 
+            resultsDiv.innerHTML = '';
+            resultsDiv.style.color = color1; // Apply the color from localStorage
+
+            // If the input is empty, clear the results and return
+            if (!input) {
+                resultsDiv.style.display = 'none';
+                return;
+            } else {
+                resultsDiv.style.display = 'block';
+            }
+
+            let found = false;
+            links.forEach(link => {
+                const linkText = link.textContent.toLowerCase();
+                if (linkText.includes(input) && !addedLinks.has(linkText)) {
+                    resultsDiv.innerHTML += `<a href="${link.getAttribute('href')}" style="color:${color1}">${link.textContent}</a><br><br>`;
+                    addedLinks.add(linkText); // Add the link to the set to avoid duplicates
+                    found = true;
+                }
+            });
+
+            if (!found) {
+                resultsDiv.innerHTML = 'No matches found.';
+            }
+        }
     </script>
 </html>
 
