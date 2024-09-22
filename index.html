@@ -32,6 +32,7 @@
             <p>Minecraft 1.8.8 (Multiplayer)</p>
             <p>Wordle Unlimited</p>
             <p>Baldis Basics</p>
+            <p>Drift Boss!</p>
             <p>More Coming Soon!</p>
             <hr>
             <h3>Want to contact me?</h1>
@@ -53,6 +54,8 @@
         <br><br><br><br>
         <div class="item", id="item" style="height: 100%; bottom: 1%;">
           <a href="1">1</a>
+          <br><br>
+          <a href="roblox/">Roblox</a>
           <br><br>
           <a href="1v1.lol">1v1.LOL</a>
           <br><br>
@@ -105,6 +108,8 @@
           <a href="cubefield">Cubefield</a>
           <br><br>
           <a href="doodlejump">Doodle Jump</a>
+          <br><br>
+          <a href="driftboss/">Drift Boss</a>
           <br><br>
           <a href="ducklife">Duck Life</a>
           <br><br>
@@ -176,7 +181,7 @@
           <br><br>
           <a href="roadblocks">Roadblocks</a>
           <br><br>
-          <a href="shellshocker/">Shell Shockers (NEW!)</a>
+          <a href="shellshockers/">Shell Shockers (NEW!)</a>
           <br><br>
           <a href="sleepingbeauty">Sleeping Beauty</a>
           <br><br>
@@ -250,11 +255,17 @@
       const gb = document.getElementById("gb")
       const slider = document.getElementById('slider')
       const item = document.getElementById('item')
-
+      
 
 
       item.style.transitionDuration = "1300ms"
       item.style.transform = "translateX(0)"
+
+      if(!localStorage.getItem("restart")){
+        localStorage.clear();
+        localStorage.setItem("restart", "restart")
+        
+      }
 
       if(localStorage.getItem('color1')){
         document.querySelectorAll('a').forEach(link => {
@@ -268,13 +279,10 @@
           document.getElementById("html").style.backgroundImage = "linear-gradient(45deg, green, rgb(0, 0, 0))";
         }
     }
-
-      if(localStorage.getItem('color2')){
-        var color = localStorage.getItem("color2")
-        document.getElementById("item").style.backgroundColor = color;
-        document.getElementById("heading").style.backgroundColor = color;
-        document.getElementById("html").style.backgroundColor = color;
+      else{
+        document.getElementById("html").style.backgroundImage = "linear-gradient(45deg, red, rgb(0, 0, 0))";
       }
+
 
       rb.addEventListener("click", ()=>{
         console.log("Switched")
@@ -292,14 +300,7 @@
         document.getElementById("html").style.backgroundImage = "linear-gradient(45deg, green, rgb(0, 0, 0))";
       })
       
-      slider.addEventListener("change", () => {
-  const prevColor = localStorage.getItem("color2");
-  const newColor = prevColor === "white" ? "black" : "white";
-  localStorage.setItem("color2", newColor);
-  document.getElementById("item").style.backgroundColor = newColor;
-  document.getElementById("heading").style.backgroundColor = newColor;
-  document.getElementById("html").style.backgroundColor = newColor;
-});
+      
 
     </script>
 </html>
