@@ -19,19 +19,20 @@
 </style>
 </head>
 <body>
-    
-<input id="url" type="text">
+
+<input id="url" type="text" placeholder="Enter URL">
 <button onclick="toggleFullScreen()">Toggle Fullscreen</button>
-<embed id="embed" src="" type="text/html">
+<embed id="embed" src="https://krew.io" type="text/html">
 
 <script>
+document.getElementById("url").addEventListener("change", function() {
+  var embed = document.getElementById("embed");
+  var url = document.getElementById("url").value;
+  embed.setAttribute("src", url);
+});
+
 function toggleFullScreen() {
   var embed = document.getElementById("embed");
-  const url = document.getElementById("url")
-
-  url.addEventListener("change", ()=>{
-    embed.setAttribute("src", url.innerHTML)
-  })
   
   if (!document.fullscreenElement) {
     embed.requestFullscreen().catch(err => {
