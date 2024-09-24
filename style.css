@@ -203,3 +203,7 @@ div.item {
 
 
 
+input#searchBox {
+  margin-top: 20px;
+  width: 100%;
+}
